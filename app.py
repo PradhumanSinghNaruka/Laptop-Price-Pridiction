@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-pipeline = pickle.load(open('pipeline.pkl', 'rb'))  # Make sure this exists
+pipeline = pickle.load(open('pipeline.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -28,12 +28,10 @@ def predict():
 
         input_data = np.array([[company, typename, ram, weight,
                                 touchscreen, ips, ppi, cpu, hdd, ssd, gpu, os]])
-
         predicted = pipeline.predict(input_data)[0]
         final_price = np.exp(predicted)
 
         return render_template('index.html', prediction_text=f"💻 Predicted Laptop Price: ₹{int(final_price):,}")
-
     except Exception as e:
         return render_template('index.html', prediction_text=f"⚠️ Error: {str(e)}")
 

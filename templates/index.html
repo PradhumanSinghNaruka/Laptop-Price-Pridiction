@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Laptop Price Predictor</title>
-</head>
+<head><title>Laptop Price Predictor</title></head>
 <body>
-  <h2>💻 Laptop Price Predictor</h2>
+  <h1>Laptop Price Predictor</h1>
   <form action="/predict" method="post">
-    <input name="company">
-    <input name="typename">
-    <input name="ram">
-    <input name="weight">
-    <select name="touchscreen">
-        <option>Yes</option>
-        <option>No</option>
-    </select>
-    <select name="ips">
-        <option>Yes</option>
-        <option>No</option>
-    </select>
-    <input name="ppi">
-    <input name="cpu">
-    <input name="hdd">
-    <input name="ssd">
-    <input name="gpu">
-    <input name="os">
+    Company: <input type="text" name="company"><br>
+    Type: <input type="text" name="typename"><br>
+    RAM: <input type="number" name="ram"><br>
+    Weight: <input type="text" name="weight"><br>
+    Touchscreen: <select name="touchscreen"><option>Yes</option><option>No</option></select><br>
+    IPS: <select name="ips"><option>Yes</option><option>No</option></select><br>
+    PPI: <input type="text" name="ppi"><br>
+    CPU: <input type="text" name="cpu"><br>
+    HDD: <input type="number" name="hdd"><br>
+    SSD: <input type="number" name="ssd"><br>
+    GPU: <input type="text" name="gpu"><br>
+    OS: <input type="text" name="os"><br>
     <button type="submit">Predict</button>
-</form>
-  {% if prediction_text %}
-    <h3>{{ prediction_text }}</h3>
-  {% endif %}
+  </form>
+  <p>{{ prediction_text }}</p>
 </body>
 </html>
