@@ -1,6 +1,6 @@
-flask
-gunicorn
 scikit-learn==1.2.2
-xgboost==2.0.3
+xgboost==1.7.6
 numpy
 pandas
+flask
+gunicorn
