@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
-import pickle
 import numpy as np
+import pickle
 
 app = Flask(__name__)
 pipeline = pickle.load(open('pipeline.pkl', 'rb'))
+with open('pipeline.pkl', 'wb') as f:
+    pickle.dump(pipeline, f)
 
 @app.route('/')
 def home():

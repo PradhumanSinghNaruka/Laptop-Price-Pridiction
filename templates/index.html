@@ -6,21 +6,26 @@
 <body>
   <h2>💻 Laptop Price Predictor</h2>
   <form action="/predict" method="post">
-    Brand: <input name="company"><br>
-    Type: <input name="typename"><br>
-    RAM (GB): <input name="ram"><br>
-    Weight (kg): <input name="weight"><br>
-    Touchscreen (Yes/No): <input name="touchscreen"><br>
-    IPS (Yes/No): <input name="ips"><br>
-    PPI: <input name="ppi"><br>
-    CPU: <input name="cpu"><br>
-    HDD (GB): <input name="hdd"><br>
-    SSD (GB): <input name="ssd"><br>
-    GPU: <input name="gpu"><br>
-    OS: <input name="os"><br>
-    <input type="submit" value="Predict">
-  </form>
-
+    <input name="company">
+    <input name="typename">
+    <input name="ram">
+    <input name="weight">
+    <select name="touchscreen">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <select name="ips">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <input name="ppi">
+    <input name="cpu">
+    <input name="hdd">
+    <input name="ssd">
+    <input name="gpu">
+    <input name="os">
+    <button type="submit">Predict</button>
+</form>
   {% if prediction_text %}
     <h3>{{ prediction_text }}</h3>
   {% endif %}
