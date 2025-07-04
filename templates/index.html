@@ -4,18 +4,18 @@
 <body>
   <h1>Laptop Price Predictor</h1>
   <form action="/predict" method="post">
-    Company: <input type="text" name="company"><br>
-    TypeName: <input type="text" name="typename"><br>
-    Ram: <input type="number" name="ram"><br>
-    Weight: <input type="text" name="weight"><br>
-    Touchscreen: <select name="touchscreen"><option>Yes</option><option>No</option></select><br>
-    Ips: <select name="ips"><option>Yes</option><option>No</option></select><br>
-    Ppi: <input type="text" name="ppi"><br>
-    Cpu brand: <input type="text" name="cpu"><br>
-    HDD: <input type="number" name="hdd"><br>
-    SSD: <input type="number" name="ssd"><br>
-    Gpu brand: <input type="text" name="gpu"><br>
-    Os: <input type="text" name="os"><br>
+    Company: <input type="text" name="Company"><br>
+    TypeName: <input type="text" name="TypeName"><br>
+    Ram: <input type="number" name="Ram"><br>
+    Weight: <input type="text" name="Weight"><br>
+    Touchscreen: <select name="TypeScreen"><option>Yes</option><option>No</option></select><br>
+    Ips: <select name="Ips"><option>Yes</option><option>No</option></select><br>
+    Ppi: <input type="text" name="Ppi"><br>
+    Cpu brand: <input type="text" name="Cpu brand"><br>
+    HDD: <input type="number" name="HDD"><br>
+    SSD: <input type="number" name="SSD"><br>
+    Gpu brand: <input type="text" name="Gpu brand"><br>
+    Os: <input type="text" name="Os"><br>
     <button type="submit">Predict</button>
   </form>
   <p>{{ prediction_text }}</p>
