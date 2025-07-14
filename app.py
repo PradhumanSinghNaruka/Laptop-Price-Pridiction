@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import pickle
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -41,13 +42,12 @@ def home():
 
 # if __name__ == "__main__":
 #     app.run(debug=True)
+# ye import zarur karo
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
         try:
-            # Debug: print pura form data
-            print("FORM DATA -->", request.form)
-
             company = request.form['Company']
             typename = request.form['TypeName']
             ram = int(request.form['Ram'])
@@ -61,17 +61,32 @@ def predict():
             gpu_brand = request.form['GpuBrand']
             os = request.form['Os']
 
-            input_data = np.array([[company, typename, ram, weight,
-                                    touchscreen, ips, ppi, cpu_brand,
-                                    hdd, ssd, gpu_brand, os]])
+            # ✅ DataFrame banana hoga
+            input_dict = {
+                'Company': [company],
+                'TypeName': [typename],
+                'Ram': [ram],
+                'Weight': [weight],
+                'Touchscreen': [touchscreen],
+                'Ips': [ips],
+                'Ppi': [ppi],
+                'Cpu brand': [cpu_brand],
+                'HDD': [hdd],
+                'SSD': [ssd],
+                'Gpu Brand': [gpu_brand],
+                'OpSys': [os]
+            }
 
-            print("INPUT DATA -->", input_data)
+            input_df = pd.DataFrame(input_dict)
+            print("INPUT DF -->")
+            print(input_df)
 
-            log_price = model.predict(input_data)[0]
+            log_price = model.predict(input_df)[0]
             predicted_price = np.exp(log_price)
 
             return render_template('index.html',
                                    prediction_text=f"Predicted Laptop Price: ₹{round(predicted_price)}")
+
         except Exception as e:
             print("ERROR -->", e)
             return "Something went wrong: " + str(e)
