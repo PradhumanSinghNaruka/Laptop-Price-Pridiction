@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><title>Laptop Price Predictor</title></head>
+<head>
+    <title>Laptop Price Predictor</title>
+</head>
 <body>
-  <h1>Laptop Price Predictor</h1>
-  <form action="/predict" method="post">
-    Company: <input type="text" name="Company"><br>
-    TypeName: <input type="text" name="TypeName"><br>
-    Ram: <input type="number" name="Ram"><br>
-    Weight: <input type="number" name="Weight"><br>
-    Touchscreen: <select name="TypeScreen"><option>Yes</option><option>No</option></select><br>
-    Ips: <select name="Ips"><option>Yes</option><option>No</option></select><br>
-    Ppi: <input type="number" name="Ppi"><br>
-    Cpu brand: <input type="text" name="Cpu brand"><br>
-    HDD: <input type="number" name="HDD"><br>
-    SSD: <input type="number" name="SSD"><br>
-    Gpu brand: <input type="text" name="Gpu brand"><br>
-    Os: <input type="text" name="Os"><br>
-    <button type="submit">Predict</button>
-  </form>
-  <p>{{ prediction_text }}</p>
+    <h1>Predict Laptop Price</h1>
+    <form action="/predict" method="post">
+        Company: <input type="text" name="Company"><br>
+        TypeName: <input type="text" name="TypeName"><br>
+        RAM (GB): <input type="number" name="Ram"><br>
+        Weight (kg): <input type="number" step="0.1" name="Weight"><br>
+        Touchscreen (0/1): <input type="number" name="Touchscreen"><br>
+        IPS (0/1): <input type="number" name="Ips"><br>
+        PPI: <input type="number" step="0.1" name="Ppi"><br>
+        CPU Brand: <input type="text" name="CpuBrand"><br>
+        HDD (GB): <input type="number" name="HDD"><br>
+        SSD (GB): <input type="number" name="SSD"><br>
+        GPU Brand: <input type="text" name="GpuBrand"><br>
+        OS: <input type="text" name="Os"><br>
+        <input type="submit" value="Predict Price">
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
 </body>
 </html>
