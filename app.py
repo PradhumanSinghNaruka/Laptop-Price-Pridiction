@@ -32,10 +32,10 @@ def predict():
         input_data = np.array([[company, typename, ram, weight,
                                 touchscreen, ips, ppi, cpu_brand,
                                 hdd, ssd, gpu_brand, os]])
-
+        print("INPUT DATA", input_data)
         log_price = model.predict(input_data)[0]
         predicted_price = np.exp(log_price)
-
+        
         return render_template('index.html',
                                prediction_text=f"Predicted Laptop Price: ₹{round(predicted_price)}")
 
