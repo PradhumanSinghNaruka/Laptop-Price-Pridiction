@@ -4,7 +4,7 @@
 # scikit-learn==1.2.2
 # xgboost
 # gunicorn
-Flask==2.3.2
-gunicorn==21.2.0
-scikit-learn==1.2.2
-numpy==1.24.3
+Flask
+gunicorn
+scikit-learn
+numpy

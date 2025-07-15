@@ -1,0 +1,17 @@
+1.Praymid of Droom : Pyramid of Doom means deeply nested callbacks in JavaScript 
+2.Async & Await : Agar apan setTimeOut ka use kar rahe h too await kissi bhi kaam ka nahi h vo stop karegaa jitna setTime
+lagaya h.
+3.JSX = It is a JavaScript XML which allow use HTML in JS.
+4.Virtual DOM = It is a lightweighted copy of a Real DOM.
+5.Components in React = It is a building Block. In a Components the combination of HTML,CSS,JS.
+6.Props = It use to pass Parent component to Child components.
+7.How data flow in React = In react data flow are in Uni-directional from parent to child by the help of Props.
+8.High Order Components = HOC ek function hai jo ek component leta hai aur ek naya component return karta hai
+
+9.Hooks = Hooks React ke built-in functions hain jo functional components ko state aur lifecycle features use karne dete hain bina class banaye.
+Example: useState, useEffect.
+10.UseState = For Updation the state of a variable.
+const [count,setCount] = useCount(0);
+11.UseEffect = Ye side effects handle karta hai. Side effect mtlb: data fetch, manual DOM update, event listener, timer, API call, subscription, etc.
+
+12.React Fiber = React Fiber React ka new reconciliation engine hai (from React 16). -  mtlb large UI ko priority ke basis par update karta hai. Isse animations, transitions smooth hote hain.
