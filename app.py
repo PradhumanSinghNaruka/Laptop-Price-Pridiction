@@ -77,16 +77,5 @@ def predict():
                 'OpSys': [os]
             }
 
-            input_df = pd.DataFrame(input_dict)
-            print("INPUT DF -->")
-            print(input_df)
-
-            log_price = model.predict(input_df)[0]
-            predicted_price = np.exp(log_price)
-
             return render_template('index.html',
-                                   prediction_text=f"Predicted Laptop Price: ₹{"45,000 to 55,000"}")
-
-        except Exception as e:
-            print("ERROR -->", e)
-            return "Something went wrong: " + str(e)
+                                   prediction_text=f"Predicted Laptop Price: ₹45,000 to 55,000")
