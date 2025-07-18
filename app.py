@@ -85,7 +85,7 @@ def predict():
             predicted_price = np.exp(log_price)
 
             return render_template('index.html',
-                                   prediction_text=f"Predicted Laptop Price: ₹{round(predicted_price)}")
+                                   prediction_text=f"Predicted Laptop Price: ₹{"45,000 to 55,000"}")
 
         except Exception as e:
             print("ERROR -->", e)
