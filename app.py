@@ -77,5 +77,4 @@ def predict():
                 'OpSys': [os]
             }
 
-            return render_template('index.html',
-                                   prediction_text=f"Predicted Laptop Price: ₹45,000 to 55,000")
+            return ("Predicted Laptop Price is between : ₹45,000 to 55,000");
