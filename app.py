@@ -42,7 +42,7 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
-ye import zarur karo
+# ye import zarur karo
 
 # @app.route('/predict', methods=['POST'])
 # def predict():
